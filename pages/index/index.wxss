@@ -1,0 +1,73 @@
+/**index.wxss**/
+.banner,.recommended{
+  width: 100%;
+  height: 300rpx;
+  /* border-radius: 10rpx; */
+  background-color: rgb(239, 224, 224);
+  overflow: hidden;
+  position: relative;
+}
+.slide-image{
+    width: 100%;
+    height: 100%;
+}
+.index_modular {
+  padding-bottom: 20rpx;
+  width: 25%;
+}
+.index_modular_cri{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  margin: 26rpx auto 14rpx auto;
+  background-color: rgb(239, 224, 224);
+  overflow: hidden;
+  
+}
+.index_modular_cri image,.goods_cri image{
+  width: 100%;
+  height: 100%;
+}
+.index_modular_con{
+  color: rgb(102, 102, 102)
+}
+.tag{
+  border-bottom: 20rpx solid #eee;
+}
+.padding10{
+  padding: 6rpx 0 16rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.leftborder{
+  border-left: 8rpx solid #2FB254;
+  padding: 0 20rpx;
+}
+.theme{
+  padding: 16rpx;
+}
+.weixiupic{
+  width: 100%;
+  height: 160rpx;
+}
+.weixiuitem{
+  width: 48%;
+  border: 1px solid #eee;
+  
+}
+.btnrapir{
+  border: 1px solid #2FB254;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
+}
+.color2FB254{
+  color: #2FB254;
+}
+.describe{
+  padding:  10rpx 10rpx 20rpx 10rpx;
+}
+.hidden1{
+  margin-bottom: 10rpx
+}
+.repair{
+  padding: 30rpx 0;
+}

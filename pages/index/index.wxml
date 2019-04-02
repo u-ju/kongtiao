@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"  indicator-active-color="{{beforeColor}}">
+        <block wx:for="{{banner}}" wx:key="index">
+          <swiper-item >
+              <image src="{{item.image}}" class="slide-image" />
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <view class='flex wrap tag'>
+    <block wx:for="{{tag}}" wx:key="index">
+      <view class='index_modular center' bindtap='link' data-link='{{item.control}}' data-children="{{item.children}}">
+        <view class='index_modular_cri'>
+          <!-- <image  mode='aspectFill' src='{{item.icon}}'></image> -->
+        </view>
+        <view class='index_modular_con color6'>{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='theme'>
+    <view class='padding10'>
+      <view class='leftborder'>家电维修</view>
+    </view>
+    <view class='flex_btw repair'>
+      <view class='weixiuitem ' wx:for="{{2}}">
+        <image class='weixiupic' src='../../images/index.jpg' mode='aspectFill'></image>
+        <view class='describe'>
+          <view class='hidden1'>空调维修</view>
+          <view class='flex_btw'>
+            <view class='color2FB254 size26'>￥30元起</view>
+            <view class='btnrapir color2FB254 size26'>维修预约</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
