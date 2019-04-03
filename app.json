@@ -10,26 +10,26 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "color": "#000",
-    "selectedColor": "#2FB254",
+    "color": "#969696",
+    "selectedColor": "#F45F37",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "selectedIconPath": "images/icon_f@2x.png",
-        "iconPath": "images/icon_b@2x.png",
+        "selectedIconPath": "images/index_s.png",
+        "iconPath": "images/index_w.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/mes_h.png",
-        "iconPath": "images/mes_b.png",
+        "selectedIconPath": "images/mes_s.png",
+        "iconPath": "images/mes_w.png",
         "pagePath": "pages/logs/logs",
         "text": "消息"
       },
       {
-        "selectedIconPath": "images/my_h@2x.png",
-        "iconPath": "images/my_b@2x.png",
+        "selectedIconPath": "images/my_s.png",
+        "iconPath": "images/my_w.png",
         "pagePath": "pages/index/index",
         "text": "我的"
       }

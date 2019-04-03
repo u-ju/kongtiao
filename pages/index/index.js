@@ -18,12 +18,12 @@ Page({
       { image: '../../images/index.jpg' },
     ],
     tag:[
-      { name: "空调维修" },
-      { name: "空调清洗" },
-      { name: "空调安装" },
-      { name: "空调移机" },
-      { name: "空调保养" },
-      { name: "空调品牌" },
+      { name: "空调维修", icon: 'icon-weixiubeijing'},
+      { name: "空调清洗", icon: 'icon-xifashui' },
+      { name: "空调安装", icon: 'icon-xiyiji'},
+      { name: "空调移机", icon: 'icon-banjiapeisong'},
+      { name: "空调保养", icon: 'icon-jiajubaoyang'},
+      { name: "空调品牌", icon: 'icon-pinpaitemai-tianchong'},
     ]
   },
   
