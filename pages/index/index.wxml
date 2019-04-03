@@ -13,7 +13,6 @@
       <view class='index_modular center' bindtap='link' data-link='{{item.control}}' data-children="{{item.children}}">
         <view class='index_modular_cri'>
           <!-- <image  mode='aspectFill' src='{{item.icon}}'></image> -->
-          <text class='iconfont {{item.icon}}'></text>
         </view>
         <view class='index_modular_con color6'>{{item.name}}</view>
       </view>
@@ -29,8 +28,8 @@
         <view class='describe'>
           <view class='hidden1'>空调维修</view>
           <view class='flex_btw'>
-            <view class='colorF45F37 size26'>￥30元起</view>
-            <view class='btnrapir colorF45F37 size26'>维修预约</view>
+            <view class='color2FB254 size26'>￥30元起</view>
+            <view class='btnrapir color2FB254 size26'>维修预约</view>
           </view>
         </view>
       </view>

@@ -1,5 +1,4 @@
 /**app.wxss**/
-@import '/utils/iconfont.wxss';
 page{
   font-size: 28rpx;
 }
