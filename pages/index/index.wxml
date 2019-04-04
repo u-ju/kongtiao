@@ -11,7 +11,7 @@
   <view class='flex wrap tag'>
     <block wx:for="{{tag}}" wx:key="index">
       <view class='index_modular center' bindtap='link' data-link='{{item.control}}' data-children="{{item.children}}">
-        <view class='index_modular_cri'>
+        <view class='index_modular_cri {{item.class}}'>
           <!-- <image  mode='aspectFill' src='{{item.icon}}'></image> -->
           <text class='iconfont {{item.icon}}'></text>
         </view>

@@ -18,12 +18,12 @@ Page({
       { image: '../../images/index.jpg' },
     ],
     tag:[
-      { name: "空调维修", icon: 'icon-weixiubeijing'},
-      { name: "空调清洗", icon: 'icon-xifashui' },
-      { name: "空调安装", icon: 'icon-xiyiji'},
-      { name: "空调移机", icon: 'icon-banjiapeisong'},
-      { name: "空调保养", icon: 'icon-jiajubaoyang'},
-      { name: "空调品牌", icon: 'icon-pinpaitemai-tianchong'},
+      { name: "空调维修", icon: 'icon-weixiubeijing', class:'jb1'},
+      { name: "空调清洗", icon: 'icon-xifashui', class: 'jb2' },
+      { name: "空调安装", icon: 'icon-xiyiji', class: 'jb3'},
+      { name: "空调移机", icon: 'icon-banjiapeisong', class: 'jb4'},
+      { name: "空调保养", icon: 'icon-jiajubaoyang', class: 'jb5'},
+      { name: "空调品牌", icon: 'icon-pinpaitemai-tianchong', class: 'jb6'},
     ]
   },
   
