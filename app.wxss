@@ -1,6 +1,8 @@
 /**app.wxss**/
+@import '/utils/iconfont.wxss';
 page{
   font-size: 28rpx;
+  color: #444;
 }
 .flex{
   display: flex;
@@ -8,6 +10,16 @@ page{
 .flex_btw{
   display: flex;
   justify-content: space-between;
+  
+}
+.flex_ard{
+  justify-content: space-around;
+}
+.flex_cen{
+  justify-content: center;
+}
+.aligncenter{
+  align-items: center
 }
 .center{
   text-align: center;
@@ -27,6 +39,33 @@ page{
   -webkit-box-orient:vertical;
   -webkit-line-clamp:2; 
 }
+.size20{
+  font-size: 20rpx;
+}
+.size24{
+  font-size: 24rpx;
+}
 .size26{
   font-size: 26rpx;
+}
+.size30{
+  font-size: 30rpx;
+}
+.size32{
+  font-size: 32rpx;
+}
+.size36{
+  font-size: 36rpx;
+}
+.colorF45F37{
+  color: #F45F37
+}
+.color9{
+  color: #999;
+}
+.color4{
+  color: #444;
+}
+.bold{
+  font-weight: bold
 }

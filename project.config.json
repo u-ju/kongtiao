@@ -4,16 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"nodeModules": false,
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.4",
-	"appid": "wxb0fe31c3d45e8a9e",
+	"appid": "wxf8d983ac3a653503",
 	"projectname": "kongtiao",
 	"debugOptions": {
 		"hidedInDevtools": []

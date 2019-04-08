@@ -1,0 +1,83 @@
+<!--pages/repair/index.wxml-->
+<view class="nav_left" >
+  <view wx:for="{{category}}" wx:for-item="item" wx:key="index" >
+    <view class="nac_left_li {{index===navActive?'active':''}}" data-index="{{index}}" data-id="b_{{index}}" bindtap="tap">{{item.categoryName}}</view>
+  </view>
+</view>
+<scroll-view class="nav_right" scroll-y="true" scroll-into-view="{{toView}}" style="height:{{s_height}}px" bindscroll="scroll" scroll-with-animation="true">
+    <!-- <view class="nav_right_box" wx:for="{{detail}}" style="height:{{index==detail.length-1?s_height+50+'px':''}}" wx:for-item="item">
+      <view class="nav_right_tit" id="b_{{index}}">{{category[index].categoryName}}</view>
+      <view class="nav_goods_box" wx:for="{{item}}" wx:for-item="good">
+        <image class="nav_goods_l" src="../../images/click/click_1.png"></image>
+        <view class="nav_goods_r">
+            <view class="nav_goods_name">{{good.goodsName}}</view>
+            <view  class="nav_goods_price">{{good.goodsPrice}}</view>
+        </view>
+     </view>
+    </view> -->
+    <image class="banner" src='../../images/index.jpg'></image>
+    <view class='page'>
+      <view class='con con1'>
+        <view class='size36 center'>空调维修</view>
+        <view class='center colorF45F37 size32 flex flex_cen aligncenter'>￥30 <text class='colorF45F37 yufj size26'>预付金</text></view>
+        <view class='color9 size24' bindtap='open2'>
+          此费用为预付金，查看取消、收款退款规则
+        </view>
+      </view>
+      <view class='con con2 flex flex_btw'>
+        <view wx:for="{{item}}"  wx:for-item="item" wx:key="index" class='center'>
+          <view class='yuan'> <text class='iconfont {{item.icon}} '></text></view>
+          <view class='bold'>{{item.title}}</view>
+          <view class='color9 size20'>{{item.intr}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='page'>
+    <view class='con'>
+    <view class='size30 center marginb20'>空调维修</view>
+     <view class='history-table-wrap'>
+        <view class="table">
+          <view class="tr">
+              <view class="th th1">日期</view>
+              <view class="th th2"></view>
+          </view>
+          <view class="tr" >
+              <view class="td td1">2018/02/12</view>
+              <view class="td td2">11:30</view>
+          </view>
+        </view>
+        <view class="table">
+          <view class="tr">
+              <view class="th th1">日期</view>
+              <view class="th th2"></view>
+          </view>
+          <view class="tr" >
+              <view class="td td1">2018/02/12</view>
+              <view class="td td2">11:30</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+</scroll-view>
+
+<wux-popup position="bottom" visible="{{ visible2 }}" bind:close="onClose2" closable  >
+    <view class='content'>
+      <view class='center size30'>收费标准</view>
+      <view class='size26'>
+        <view class='bold color4'>正常退款:</view>
+        <view>
+          <text>1、商家未接单，用户申请取消订单，支持用户全额退款。\n
+          2、商家取消订单，支持用户全额退款。\n
+          3、商家已确认接单，未上”J服务，支持全额退款。
+          </text>
+        </view>
+      </view>
+      <view>
+        <view class='bold color4'>收取上门费:</view>
+        <view>
+          <text>商家上门后，因用户原因取消订单的，将扣除30元预付款作为商家上门费，如有剩余金额原路退还。</text>
+        </view>
+      </view>
+    </view>
+</wux-popup>
