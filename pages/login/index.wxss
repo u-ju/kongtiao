@@ -1,0 +1,26 @@
+/* pages/login/index.wxss */
+.login{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.login .miaoshu{
+  margin: 400rpx 0 40rpx 0;
+  font-size: 28rpx;
+}
+.button{
+  width: 300rpx;
+  height: 70rpx;
+  border-radius: 60rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  justify-content: center;
+}
+.button image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}

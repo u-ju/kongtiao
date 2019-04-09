@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/login/index",
     "pages/repair/index",
     "pages/index/index",
     "pages/logs/logs"
