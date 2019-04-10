@@ -1,38 +1,32 @@
 <!--pages/repair/index.wxml-->
 <view class="nav_left" >
   <view wx:for="{{category}}" wx:for-item="item" wx:key="index" >
-    <view class="nac_left_li {{index===navActive?'active':''}}" data-index="{{index}}" data-id="b_{{index}}" bindtap="tap">{{item.categoryName}}</view>
+    <view class="nac_left_li {{index===navActive?'active':''}}" data-index="{{index}}" bindtap="tap">{{item.categoryName}}</view>
   </view>
 </view>
-<scroll-view class="nav_right" scroll-y="true" scroll-into-view="{{toView}}" style="height:{{s_height}}px" bindscroll="scroll" scroll-with-animation="true">
-    <!-- <view class="nav_right_box" wx:for="{{detail}}" style="height:{{index==detail.length-1?s_height+50+'px':''}}" wx:for-item="item">
-      <view class="nav_right_tit" id="b_{{index}}">{{category[index].categoryName}}</view>
-      <view class="nav_goods_box" wx:for="{{item}}" wx:for-item="good">
-        <image class="nav_goods_l" src="../../images/click/click_1.png"></image>
-        <view class="nav_goods_r">
-            <view class="nav_goods_name">{{good.goodsName}}</view>
-            <view  class="nav_goods_price">{{good.goodsPrice}}</view>
-        </view>
-     </view>
-    </view> -->
-    <image class="banner" src='../../images/index.jpg'></image>
-    <view class='page'>
-      <view class='con con1'>
-        <view class='size36 center'>空调维修</view>
-        <view class='center colorF45F37 size32 flex flex_cen aligncenter'>￥30 <text class='colorF45F37 yufj size26'>预付金</text></view>
-        <view class='color9 size24' bindtap='open2'>
-          此费用为预付金，查看取消、收款退款规则
-        </view>
+<scroll-view class="nav_right" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation="true" style="height:{{s_height}}px"  >
+    <view class='page0' id='page-0'>
+      <view class='banner'>
+        <image class="banner" src='../../images/index.jpg'></image>
       </view>
-      <view class='con con2 flex flex_btw'>
-        <view wx:for="{{item}}"  wx:for-item="item" wx:key="index" class='center'>
-          <view class='yuan'> <text class='iconfont {{item.icon}} '></text></view>
-          <view class='bold'>{{item.title}}</view>
-          <view class='color9 size20'>{{item.intr}}</view>
+      <view class='page '>
+        <view class='con con1'>
+          <view class='size36 center'>空调维修</view>
+          <view class='center colorF45F37 size32 flex flex_cen aligncenter'>￥30 <text class='colorF45F37 yufj size26'>预付金</text></view>
+          <view class='color9 size24' bindtap='open2'>
+            此费用为预付金，查看取消、收款退款规则
+          </view>
+        </view>
+        <view class='con con2 flex flex_btw'>
+          <view wx:for="{{item}}"  wx:for-item="item" wx:key="index" class='center'>
+            <view class='yuan'> <text class='iconfont {{item.icon}} '></text></view>
+            <view class='bold'>{{item.title}}</view>
+            <view class='color9 size20'>{{item.intr}}</view>
+          </view>
         </view>
       </view>
     </view>
-    <view class='page'>
+    <view class='page page1' id='page-1'>
     <view class='con'>
     <view class='size30 center marginb20'>空调维修</view>
      <view class='history-table-wrap'>
@@ -42,7 +36,7 @@
               <view class="th th2"></view>
           </view>
           <view class="tr" >
-              <view class="td td1">2018/02/12</view>
+              <view class="td td1">我是内容我是内容我是内容我是内容我是内容我是内容</view>
               <view class="td td2">11:30</view>
           </view>
         </view>
@@ -55,9 +49,47 @@
               <view class="td td1">2018/02/12</view>
               <view class="td td2">11:30</view>
           </view>
+          <view class="tr" >
+              <view class="td td1">2018/02/12</view>
+              <view class="td td2">11:30</view>
+          </view>
+          <view class="tr" >
+              <view class="td td1">2018/02/12</view>
+              <view class="td td2">11:30</view>
+          </view>
+          <view class="tr" >
+              <view class="td td1">2018/02/12</view>
+              <view class="td td2">11:30</view>
+          </view>
         </view>
       </view>
     </view>
+    </view>
+    <view class='page page2' id='page-2'>
+      <view class='con'>
+        <image  src='../../images/index.jpg'></image>
+      </view>
+    </view>
+    <view class='page page3' id='page-3'>
+      <view class='con'>
+        <view class='size30 center marginb20'>评价</view>
+        <view class='flex_btw aligncenter'>
+          <view class='head flex aligncenter'>
+            <image  src='../../images/index.jpg' class='header'></image>
+            <view>
+              <view>hhhh</view>
+              <view>
+                <text wx:for="{{5}}" class='iconfont icon-xiyiji'></text>
+              </view>
+            </view>
+          </view>
+          <view class='color9'>20190302</view>
+        </view>
+        <view class='plcon'>
+          <view class='plcont'>哒哒哒哒哒哒多多多多多多多多多多多多多多多多多多多多</view>
+          <image  src='../../images/index.jpg'></image>
+        </view>
+      </view>
     </view>
 </scroll-view>
 

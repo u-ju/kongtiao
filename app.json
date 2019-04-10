@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/login/index",
     "pages/repair/index",
+    "pages/login/index",
+    
     "pages/index/index",
     "pages/logs/logs"
     
