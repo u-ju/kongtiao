@@ -18,7 +18,7 @@ page{
 .flex_cen{
   justify-content: center;
 }
-.aligncenter{
+.aligncenter,.align_center{
   align-items: center
 }
 .center{
@@ -51,11 +51,15 @@ page{
 .size30{
   font-size: 30rpx;
 }
+
 .size32{
   font-size: 32rpx;
 }
 .size36{
   font-size: 36rpx;
+}
+.size40{
+  font-size: 40rpx;
 }
 .colorF45F37{
   color: #F45F37

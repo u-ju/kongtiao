@@ -1,0 +1,74 @@
+<!--pages/repairPayment/index.wxml-->
+<view class='flex_btw align_center orderTitle'>
+  <view class='width620 location flex aligncenter' bindtap='link'>
+    <view class='iconfont icon-xiyiji'></view>
+    <view>
+      <view class='bold'>收货地址收货地址收货地址收货地址</view>
+      <view class='margt42'>李二狗      <text class='marginl54'>18521035656 </text>  </view>
+    </view>
+  </view>
+  <view class='iconfont icon-jiantou'></view>
+</view>
+
+<view class='fkItem  shitem' >
+  
+  <view class='fkItem_goods flex'  wx:key="index">
+    <image src='../../images/index.jpg' class='goospic' mode='aspectFit'></image>
+    <view class='fkItem_goods_ms '>
+      <view class='color4 size28 flex_btw'><text class='one-hidden width'>空调维修</text> <text class='color898989'><text class='iconfont icon-cuohao'></text>1</text></view>
+      <view class='color4 size28 one-hidden'>上门服务</view>
+      <view class='colorF45F37 size28'>￥30</view>
+      
+    </view>
+  </view>
+  <view class='flex_btw guarantee'>
+    <view class='flex'>
+      <text class='bold'>保障</text>
+      <view>
+        <text class='iconfont icon-xiyiji'></text>
+        <text>明码标价</text>
+      </view>
+    </view>
+    <text class='iconfont icon-jiantou'></text>
+  </view>
+</view>
+<view class='color4 size28 kdxx'>
+  <!-- <view>订单号：{{result.sku_name}}</view>
+  <view class='flex_btw'><text>配送方式</text><text class='color898989'>快递免邮</text></view> -->
+  <view class='flex_btw'><text class='bold'>运费</text><text class='color898989 bold'>￥30</text></view>
+  <view class='flex_btw'><text class='bold' >商家优惠</text><text class='colorFE3434 size30 bold'>-20</text></view>
+  <view class='flex_btw aligncenter'>
+    <text class='bold ' >留言</text>
+    <input placeholder='选填' placeholder-class='color9'></input>
+  </view>
+</view>
+<view class='flex align_center margint40'>
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{choosexy}}" wx:key="index">
+      <checkbox value="{{item.name}}" checked="{{item.checked}}" />
+      {{item.value}}
+    </label>
+  </checkbox-group>
+  <navigator  url='../page/index?url={{nper}}'>《用户协议》</navigator>
+</view>
+<view class='tips'>
+  <view class='size30'>温馨提示</view>
+  <view>
+    <text class='size24'>
+    1.  预约前与商家沟通上个]时间，可提高被接单的概率。\n
+    2.请仔细核对订单手机号，并保持电话畅通，商家会在服务开始前，通过此号码与您联系。\n
+    3.为全程保障您的权益，包括但不限于退款、赔偿等处,理，均以在线支付的订单作为唯一-有效的凭证。  止私下交易。详见《58到家平台争议处理规则》\n
+    4.支付时可使用代金券(仅限使用一张)、会员卡\n
+    5.发票由商家提供
+    </text>
+  </view>
+</view>
+<view class='fixbtm'>
+<view class='bgfdf1c4'>请仔细查看「服务价目表 」再进行购买;在线支付的订单是处理退款、赔偿等问题的唯一凭据， 私下交易无法享受权益保障! </view>
+<view class='flex_btw aligncenter'>
+  <view>待支付  <text class='colorF45F37 bold size40'>￥30</text></view>
+  <view class='button'>去支付</view>
+</view>
+</view>
+<view class='btnsure' bindtap='open3'>立即付款</view>
+

@@ -6,16 +6,16 @@ Page({
     visible2: false,
     scrollTop: 0,
     last_scrollTop: 0,
-    toView: 0,
+    toView: 'page0',
     navActive: 0,
     lastActive: 0,
     s_height: '',
     height_arr: [],
     category: [
-      { categoryName: '零食' },
-      { categoryName: '饮料' },
-      { categoryName: '日常' },
-      { categoryName: '电器' }
+      { categoryName: '服务' },
+      { categoryName: '收费标准' },
+      { categoryName: '详情' },
+      { categoryName: '评价' }
     ],
     detail: [
       [{ goodsName: '可比克薯片', goodsPrice: '3.8' }, { goodsName: '巧克力', goodsPrice: '10.8' }, { goodsName: '旺仔小馒头', goodsPrice: '8.0' }, { goodsName: '烤馍片', goodsPrice: '1.0' }],
@@ -30,59 +30,52 @@ Page({
     ]
   },
   tap: function (e) {
-    var id = e.currentTarget.dataset.id;
+    console.log(e)
+    // var id = e.currentTarget.dataset.id;
     var index = e.currentTarget.dataset.index;
     this.setData({
-      toView: id,
+      toView: 'view' + index,
       navActive: index
     });
+    console.log(this.data.toView)
   },
   scroll: function (e) {
-    var self = this;
-
-    //self.setData({scrollTop:e.detail.scrollTop});
-    //console.log("sd:",self.data.scrollTop);
-
-
-    //setTimeout(function(){
-
-    //if(self.data.last_scrollTop!=self.data.scrollTop){
-    //console.log(self.data.last_scrollTop);
-    //self.setData({last_scrollTop:self.data.scrollTop});
-    self.scrollmove(self, e, e.detail.scrollTop);
-    //}
-    // },1000);
-
-  },
-  scrollmove: function (self, e, scrollTop) {
-    // last_scrollTop=scrollTop;
-    var scrollArr = self.data.height_arr;
-    if (scrollTop > scrollArr[scrollArr.length - 1] - self.data.s_height) {
-      return;
-    } else {
-      for (var i = 0; i < scrollArr.length; i++) {
-        if (scrollTop >= 0 && scrollTop < scrollArr[0]) {
-          if (0 != self.data.lastActive) {
-            self.setData({
-              navActive: 0,
-              lastActive: 0
-            });
-          }
-        } else if (scrollTop >= scrollArr[i - 1] && scrollTop <= scrollArr[i]) {
-          if (i != self.data.lastActive) {
-            self.setData({
-              navActive: i,
-              lastActive: i
-            });
-          }
-        }
-      }
-    }
+    this.setData({
+      intoView: "view" + e.currentTarget.dataset.id
+    })
   },
   onLoad: function () {
-    var s_height = wx.getSystemInfoSync().windowHeight;
-    this.setData({ s_height: s_height });
-    this.getHeightArr(this);
+    // var s_height = wx.getSystemInfoSync().windowHeight;
+    // this.setData({ s_height: s_height });
+    // this.getHeightArr(this);
+    var height=0,that = this,allheight=[]
+    console.log()
+      that.setData({
+        s_height: wx.getSystemInfoSync().windowHeight - 50
+      })
+    // wx.createSelectorQuery().selectAll('.view0').boundingClientRect(function (rect) {
+    //   allheight.push(height)
+    //   height = height + rect[0].height
+      
+    // }).exec() 
+    // wx.createSelectorQuery().selectAll('.view1').boundingClientRect(function (rect) {
+    //   allheight.push(height)
+    //   height = height + rect[0].height
+      
+    // }).exec() 
+    // wx.createSelectorQuery().selectAll('.view2').boundingClientRect(function (rect) {
+    //   allheight.push(height)
+    //   height = height + rect[0].height
+    // }).exec() 
+    // wx.createSelectorQuery().selectAll('.view3').boundingClientRect(function (rect) {
+    //   allheight.push(height)
+    //   height = height + rect[0].height
+    //   that.setData({
+    //     s_height: height,
+    //     allheight: allheight
+    //   })
+    // }).exec() 
+    
   },
   getHeightArr: function (self) {
     var height = 0, height_arr = [], details = self.data.detail, s_height = self.data.s_height;

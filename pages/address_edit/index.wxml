@@ -1,0 +1,20 @@
+<!--pages/address_edit/index.wxml-->
+<form  bindsubmit="formSubmit">
+<view class='flex align_center'>
+  <view class='left'>收货人</view>
+  <input name='name' value='{{name}}'></input>
+</view>
+<view class='flex align_center'>
+  <view class='left'>联系电话</view>
+  <input name='phone' value='{{phone}}'></input>
+</view>
+<view class='flex align_center'>
+  <view class='left'>所在地区</view>
+  <area title='选择区域' areaSelectedStr='{{areaSelectedStr}}' bind:choosea='choosearea' />
+</view>
+<view class='flex align_center'>
+  <view class='left'>详细地址</view>
+  <input  name='address' value='{{address}}'></input>
+</view>
+  <button class='btnsure' disabled='{{disabled}}'  form-type="submit">保存</button>
+</form>

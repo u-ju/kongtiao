@@ -1,0 +1,192 @@
+/* pages/repairPayment/index.wxss */
+page{background-color: #f8f8f8;
+}
+.marginl54{
+  display: inline-block;
+  margin-left: 56rpx;
+}
+page{
+  color: #444;
+  font-size: 28rpx;
+}
+.margt42{
+  margin-top: 22rpx;
+}
+.orderTitle{
+  padding: 34rpx 40rpx;
+  border-top: 10rpx solid #f8f8f8;
+  border-bottom: 10rpx solid #f8f8f8;
+  background-color: #fff;
+}
+.fkItem{
+  width: 686rpx;
+  padding: 16rpx 34rpx;
+  box-shadow: none;
+  border-bottom: 10rpx solid #f8f8f8;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+.fkItem_goods_ms{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.fkItem_goods{
+  margin: 0;
+  width: 686rpx;
+}
+.location .iconfont{
+  width: 50rpx
+}
+.width{
+  width: 350rpx;
+  display: inline-block;
+}
+.shitem .fkItem_goods_ms{
+  width: 430rpx;
+}
+.kdxx{
+  padding: 0 32rpx;
+  margin: auto;
+  background-color: #fff;
+}
+.kdxx view{
+  padding: 26rpx 0;
+  border-bottom: 1px solid #f8f8f8;
+}
+.btnsure{
+  margin: 100rpx auto
+}
+.label{
+  border: none;
+}
+.radioitem{
+  padding: 14rpx 0;
+}
+.goodsBuy{
+  margin: 40rpx auto 60rpx auto;
+}
+.choose{
+  width: 38rpx;
+  height: 38rpx;
+}
+.shitem .colorFE2C2C {
+  margin:0 0;
+}
+.width620{
+  width: 620rpx;
+}
+.fkItem_goods_ms .icon-cuohao{
+  position: static;
+  font-size: 22rpx;
+}
+.size60{
+  font-size: 60rpx;
+}
+.radioinstallment image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.radioinstallment{
+height:50rpx;
+margin-left:60rpx;
+}
+
+navigator{
+  display: inline-block;
+  color: #4AD6A3;
+  font-size: 28rpx;
+}
+.goospic{
+  width:205rpx;
+  height:150rpx;
+  margin-right: 40rpx;
+}
+.fkItem_goods{
+  margin-top: 20rpx;
+  /* width: 600rpx; */
+}
+.fkItem_goods_ms .colorFE2C2C{
+  margin-top: 12rpx;
+}
+checkbox-group{
+  margin: 0 0 0 32rpx;
+}
+
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  border-color: #eee;
+
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #4AD6A3;
+  border-color: #4AD6A3;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  border-color: #4AD6A3;
+}
+.checkbox{
+  display: flex;
+  align-items: center;
+  
+}
+.margint40{
+  /* margin-top: 40rpx; */
+  padding: 26rpx 0;
+  border-top: 10rpx solid #f8f8f8;
+  border-bottom: 10rpx solid #f8f8f8;
+  background-color: #fff;
+}
+.guarantee{
+  padding: 20rpx 0 10rpx 0;
+}
+.guarantee .bold{
+  margin-right: 80rpx;
+}
+.kdxx input{
+  width: 560rpx;
+  text-align: right;
+}
+.tips{
+  padding: 20rpx 32rpx 50rpx 32rpx;
+  background-color: white
+}
+.fixbtm{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.bgfdf1c4{
+  background-color: #fdf1c4;
+  font-size: 24rpx;
+  color: #816943;
+  padding: 8rpx 32rpx;
+}
+.fixbtm .aligncenter{
+  padding: 14rpx 32rpx;
+  background-color: white;
+}
+.button{
+  width:160rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: #F45F37;
+  color: white;
+  border-radius: 6rpx;
+}
