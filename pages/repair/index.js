@@ -37,7 +37,17 @@ Page({
       toView: 'page-' + index,
       navActive: index
     });
-    console.log(this.data.toView)
+    console.log(this.data.allheight)
+    this.setData({
+      scrollTop: this.data.allheight[index]
+    })
+    
+  },
+  scroll(e) {
+    this.setData({
+      scrollTop: this.data.allheight[this.data.navActive]
+    })
+    console.log(e)
   },
   onLoad: function () {
     // var s_height = wx.getSystemInfoSync().windowHeight;
