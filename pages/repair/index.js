@@ -37,7 +37,17 @@ Page({
       toView: 'view' + index,
       navActive: index
     });
-    console.log(this.data.toView)
+    console.log(this.data.allheight)
+    this.setData({
+      scrollTop: this.data.allheight[index]
+    })
+    
+  },
+  scroll(e) {
+    this.setData({
+      scrollTop: this.data.allheight[this.data.navActive]
+    })
+    console.log(e)
   },
   scroll: function (e) {
     this.setData({
