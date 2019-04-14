@@ -10,7 +10,17 @@
 </view>
 <view class='flex align_center'>
   <view class='left'>所在地区</view>
-  <area title='选择区域' areaSelectedStr='{{areaSelectedStr}}' bind:choosea='choosearea' />
+  <!-- <input name='area' value='{{area}}'></input> -->
+   <picker
+    mode="region"
+    bindchange="bindRegionChange"
+    value="{{region}}"
+    custom-item="{{customItem}}"
+  >
+    <view class="picker">
+      {{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </picker>
 </view>
 <view class='flex align_center'>
   <view class='left'>详细地址</view>

@@ -190,3 +190,6 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   color: white;
   border-radius: 6rpx;
 }
+.icon-qian{
+  color: #F45F37;
+}

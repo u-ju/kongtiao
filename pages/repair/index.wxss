@@ -97,7 +97,7 @@
   border-radius:10px;
   margin-bottom: 20rpx;
 }
-.con1 .colorF45F37{
+.con1>.colorF45F37{
   margin: 10rpx 0 20rpx 0;
 }
 .con1 .size24{
@@ -127,8 +127,8 @@
   padding: 30rpx 50rpx;
 }
 .con2 .yuan{
-  width: 50rpx;
-  height: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
   border-radius: 50%;
   margin: auto;
   background-color: #F45F37;
@@ -138,8 +138,22 @@
   overflow: hidden;
 }
 .yuan .iconfont{
-  font-size: 40rpx;
-  padding-top: 20rpx;
+  display: inline-block;
+  /* margin-top: ; */
+  font-size: 30rpx;
+  color:#f1fde9;
+  
+}
+.hyuan{
+  background-color: #f4d5a8;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin: 14rpx auto auto auto;
+
+}
+.yuan .size24{
+  font-size: 24rpx;
 }
 .history-table-wrap{
   width: 100%;
@@ -238,4 +252,12 @@
   width: 200rpx;
   text-align: center;
   margin: 20rpx auto;
+}
+.icon-xingxing{
+  color: #fd0000;
+  margin-right: 6rpx;
+}
+.page1_des .colorF45F37{
+  display: inline-block;
+  margin-bottom: 6rpx;
 }

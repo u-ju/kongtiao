@@ -24,9 +24,9 @@ Page({
       [{ goodsName: '小米6', goodsPrice: '2499.0' }, { goodsName: '华为p10', goodsPrice: '2099.0' }, { goodsName: '荣耀20', goodsPrice: '1699.0' }, { goodsName: '红米6', goodsPrice: '899.0' }],
     ],
     item:[
-      { icon: 'icon-xiyiji', title: '时效保障', intr: '3分钟响应' },
-      { icon: 'icon-xiyiji', title: '时效保障', intr: '3分钟响应' },
-      { icon: 'icon-xiyiji', title: '时效保障', intr: '3分钟响应' },
+      { icon: 'icon-shijian', title: '时效保障', intr: '3分钟响应' },
+      { icon: 'icon-qian', title: '明码标价', intr: '服务费公开透明' },
+      // { icon: 'icon-xiyiji', title: '时效保障', intr: '3分钟响应' },
     ]
   },
   tap: function (e) {
@@ -37,55 +37,21 @@ Page({
       toView: 'view' + index,
       navActive: index
     });
-    console.log(this.data.allheight)
-    this.setData({
-      scrollTop: this.data.allheight[index]
-    })
+    
     
   },
-  scroll(e) {
-    this.setData({
-      scrollTop: this.data.allheight[this.data.navActive]
-    })
-    console.log(e)
-  },
+  
   scroll: function (e) {
     this.setData({
       intoView: "view" + e.currentTarget.dataset.id
     })
   },
   onLoad: function () {
-    // var s_height = wx.getSystemInfoSync().windowHeight;
-    // this.setData({ s_height: s_height });
-    // this.getHeightArr(this);
     var height=0,that = this,allheight=[]
     console.log()
       that.setData({
         s_height: wx.getSystemInfoSync().windowHeight - 50
       })
-    // wx.createSelectorQuery().selectAll('.view0').boundingClientRect(function (rect) {
-    //   allheight.push(height)
-    //   height = height + rect[0].height
-      
-    // }).exec() 
-    // wx.createSelectorQuery().selectAll('.view1').boundingClientRect(function (rect) {
-    //   allheight.push(height)
-    //   height = height + rect[0].height
-      
-    // }).exec() 
-    // wx.createSelectorQuery().selectAll('.view2').boundingClientRect(function (rect) {
-    //   allheight.push(height)
-    //   height = height + rect[0].height
-    // }).exec() 
-    // wx.createSelectorQuery().selectAll('.view3').boundingClientRect(function (rect) {
-    //   allheight.push(height)
-    //   height = height + rect[0].height
-    //   that.setData({
-    //     s_height: height,
-    //     allheight: allheight
-    //   })
-    // }).exec() 
-    
   },
   getHeightArr: function (self) {
     var height = 0, height_arr = [], details = self.data.detail, s_height = self.data.s_height;

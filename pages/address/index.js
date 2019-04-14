@@ -9,7 +9,23 @@ Page({
    */
   data: {
     list: [
-     
+      { address:"我是详细地址",
+      address_id: "3",
+      area_id: "5",
+      area_name: "四川省 成都市 金牛区",
+      default: "1",
+      name: "李二狗",
+      phone: "15198065466"
+      },
+      {
+        address: "我是详细地址",
+        address_id: "3",
+        area_id: "5",
+        area_name: "四川省 成都市 金牛区",
+        default: "0",
+        name: "李二狗",
+        phone: "15198065466"
+      }
     ]
   },
 

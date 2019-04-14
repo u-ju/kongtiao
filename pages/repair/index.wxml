@@ -14,14 +14,19 @@
       <view class='page '>
         <view class='con con1'>
           <view class='size36 center'>空调维修</view>
-          <view class='center colorF45F37 size32 flex flex_cen aligncenter'>￥30 <text class='colorF45F37 yufj size26'>预付金</text></view>
+          <view class='center colorF45F37 size32 flex flex_cen aligncenter'> <text>￥30 </text><text class='colorF45F37 yufj size26'>预付金</text></view>
           <view class='color9 size24' bindtap='open2'>
             此费用为预付金，查看取消、收款退款规则
           </view>
         </view>
         <view class='con con2 flex flex_btw'>
           <view wx:for="{{item}}"  wx:for-item="item" wx:key="index" class='center'>
-            <view class='yuan'> <text class='iconfont {{item.icon}} '></text></view>
+            <view class='yuan'> <view class='hyuan'><text class='iconfont {{item.icon}} '></text></view></view>
+            <view class='bold'>{{item.title}}</view>
+            <view class='color9 size20'>{{item.intr}}</view>
+          </view>
+          <view class='center'>
+            <view class='yuan'> <view class='hyuan'><text class='iconfont size24'>90</text></view></view>
             <view class='bold'>{{item.title}}</view>
             <view class='color9 size20'>{{item.intr}}</view>
           </view>
@@ -65,6 +70,9 @@
           </view>
         </view>
       </view>
+      <view class='page1_des'>
+        <text class='size24'> <text class='colorF45F37'>*</text> 1、以上费用均不包含搬运费、运输费等。\n <text class='colorF45F37'>*</text> 2、销售商品、以旧换新费用单独核算。\n<text class='colorF45F37'>*</text> 3、3月至10月期间用户主动要求在20:00-22:00.上”]服务,加收30元加急费; 22:00-7:00. 上门服务,加收60元加急费;11月至2月期间用户主动要求在19:00-21:00.上”]服务，加收30元加急费; 21:00-7:00. 上”]服务,加收60元加急费。农历腊月二十四至正月初八期间，所有订单加收30，与加急费累加。</text>
+      </view>
     </view>
     </view>
     <view class='page page2' id='view2'>
@@ -82,7 +90,7 @@
               <view>
                 <view>hhhh</view>
                 <view>
-                  <text wx:for="{{5}}" class='iconfont icon-xiyiji'></text>
+                  <text wx:for="{{5}}" class='iconfont icon-xingxing'></text>
                 </view>
               </view>
             </view>
@@ -99,7 +107,7 @@
 </scroll-view>
 <view class='fixbtm'>
   <view>
-    <text  class='iconfont icon-xiyiji '></text>
+    <text  class='iconfont icon-xiaoxi '></text>
     <view>联系商家</view>
   </view>
   <view class='button'>立即预约</view>
