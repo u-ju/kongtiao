@@ -27,8 +27,8 @@
           </view>
           <view class='center'>
             <view class='yuan'> <view class='hyuan'><text class='iconfont size24'>90</text></view></view>
-            <view class='bold'>{{item.title}}</view>
-            <view class='color9 size20'>{{item.intr}}</view>
+            <view class='bold'>时效保障</view>
+            <view class='color9 size20'>3分钟响应</view>
           </view>
         </view>
       </view>
