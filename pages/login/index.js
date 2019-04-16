@@ -41,43 +41,26 @@ Page({
         success: function (res) {
           var data = { wx_code: res.code, wx_appid: 'wxf8d983ac3a653503' }
           if (res.code) {
-            util.postJSON({ apiUrl: apiurl.wechatLetAttemptLogin, data: data }, function (res1) {
-              if (res1.data.result.token) {
-                wx.setStorageSync("token", res1.data.result.token)
-                token = res1.data.result.token
-                that.setData({
-                  token: token
-                })
-                
-              } else {
                 wx.getUserInfo({
                   success(res2) {
+                    console.log(res2)
                     util.postJSON({
-                      apiUrl: apiurl.wechatLetLogin,
+                      apiUrl: apiurl.auth,
                       data: {
-                        wx_appid: 'wxf8d983ac3a653503',
-                        share_gene: that.data.share_gene,
-                        session_key: util.base64encode(util.utf16to8(res1.data.result.wx_user.session_key)),
-                        iv: util.base64encode(util.utf16to8(res2.iv)),
-                        encrypt_data: util.base64encode(util.utf16to8(res2.encryptedData))
+                        code: res.code,
+                        rawData: res2.rawData,
+                        iv: res2.iv,
+                        signature: res2.signature,
+                        encryptedData: res2.encryptedData
                       }
                     }, function (res3) {
-                      wx.setStorageSync("token", res3.data.result.token)
-                      console.log(wx.getStorageSync('token'))
-                      token = res3.data.result.token
-                      that.setData({
-                        token: token
-                      })
-                      return that.init()
+                      console.log(res3)
+                      wx.setStorageSync('token', res3.data.token)
+                      util.hideLoading()
                     })
                   }
                 })
-              }
-            }, function () {
-              util.alert('授权失败')
-            }, function () {
-              util.alert('授权失败')
-            })
+              
           }
         },
         fail(w) {

@@ -139,7 +139,7 @@ function upload_file_server(url, that, upload_picture_list, j, arr, storge) {
       var data = JSON.parse(res.data);
       // //字符串转化为JSON  
 
-      if (data.status == 200) {
+      if (data.status == 200 || data.status == 0) {
         var filename = data.result.image_url //存储地址 显示
         upload_picture_list[j]['path_server'] = filename
 
@@ -340,44 +340,8 @@ function getJSON(form = {}, call_success, ErrorMsg) {
     method: 'GET',
     header: header,
     success: function (res) {
-      if (res.statusCode == 500) {
-        return that.info_dialog('无效请求')
-      }
-      if (res.data.status == 200) {
-        // console.log(res.data)
-        if (res.data.result.hasOwnProperty("hint") && JSON.stringify(res.data.result.hint) != "{}") {
-          wx.navigateTo({
-            url: '../result/index?hint=' + JSON.stringify(res.data.result.hint),
-          })
-        } else {
-          call_success(res)
-        }
-
-      } else if (res.data.status == 801) {
-        if (form.apiUrl.indexOf("config") > -1) {
-          return false
-        }
-        wx.setStorageSync("token", 1)
-        wx.reLaunch({
-          url: '../index/index',
-        })
-        // that.getToken(801, form, call_success,"get")
-      } else if (res.data.status == 802) {
-        wx.reLaunch({
-          url: '../ban/index',
-        })
-      } else {
-        if (res.data.status == 414 && res.data.result.hasOwnProperty("hint") && JSON.stringify(res.data.result.hint) != "{}") {
-          wx.navigateTo({
-            url: '../result/index?hint=' + JSON.stringify(res.data.result.hint),
-          })
-        } else {
-          if (warning) {
-            warning(res)
-          }
-          that.info_dialog(res.data.message)
-        }
-      }
+      console.log(res)
+      
     },
     fail: function (ErrorMsg1) {
       if (ErrorMsg) {
@@ -406,46 +370,16 @@ function postJSON(form = {}, call_success, warning, ErrorMsg) {
       'build': build
     }
   }
+  formData.token = that.getToken()
   wx.request({
     url: apiUrl,
     data: formData,
     method: 'POST',
     header: header,
     success: function (res) {
-      // console.log(res)
-      if (res.statusCode == 500) {
-        return that.info_dialog('无效请求')
-      }
-      if (res.data.status == 200) {
-        if (res.data.result.hasOwnProperty("hint") && JSON.stringify(res.data.result.hint) != "{}") {
-          wx.navigateTo({
-            url: '../result/index?hint=' + JSON.stringify(res.data.result.hint),
-          })
-        } else {
-          call_success(res)
-        }
-      } else if (res.data.status == 801) {
-        that.putSync('formData', formData, 600)
-        wx.setStorageSync("token", 1)
-        wx.reLaunch({
-          url: '../index/index',
-        })
-      } else if (res.data.status == 802) {
-        wx.reLaunch({
-          url: '../ban/index',
-        })
-      } else {
-        if (res.data.status == 414 && res.data.result.hasOwnProperty("hint") && JSON.stringify(res.data.result.hint) != "{}") {
-          wx.navigateTo({
-            url: '../result/index?hint=' + JSON.stringify(res.data.result.hint),
-          })
-        } else {
-          if (warning) {
-            warning(res)
-          }
-          that.info_dialog(res.data.message)
-        }
-
+      console.log(res)
+      if (res.data.state==0){
+        call_success(res.data)
       }
     },
     fail: function (ErrorMsg1) {

@@ -1,5 +1,7 @@
 // pages/repair/index.js
 const app = getApp()
+var util = require('../../utils/util.js');
+var apiurl = require('../../utils/api.js');
 
 Page({
   data: {
@@ -40,18 +42,52 @@ Page({
     
     
   },
-  
-  scroll: function (e) {
-    this.setData({
-      intoView: "view" + e.currentTarget.dataset.id
-    })
-  },
   onLoad: function () {
     var height=0,that = this,allheight=[]
-    console.log()
+    util.postJSON({
+      apiUrl: apiurl.airConditionerType,
+      data: {
+        type:1
+      }
+    }, function (res3) {
+      console.log(res3)
+
+    })
+    wx.createSelectorQuery().selectAll('.page0').boundingClientRect(function (rect) {
+      console.log(rect)
+      height = height + rect[0].height
+      allheight.push(height)
+    }).exec() 
+    wx.createSelectorQuery().selectAll('.page1').boundingClientRect(function (rect) {
+      console.log(rect)
+      height = height + rect[0].height
+      allheight.push(height)
+    }).exec() 
+    wx.createSelectorQuery().selectAll('.page2').boundingClientRect(function (rect) {
+      height = height + rect[0].height
+      allheight.push(height)
+    }).exec() 
+    wx.createSelectorQuery().selectAll('.page3').boundingClientRect(function (rect) {
+      height = height + rect[0].height
+      allheight.push(height)
       that.setData({
-        s_height: wx.getSystemInfoSync().windowHeight - 50
+        allheight: allheight
       })
+      console.log(allheight)
+    }).exec() 
+    
+      that.setData({
+        s_height: wx.getSystemInfoSync().windowHeight - 50,
+        allheight: allheight
+      })
+  },
+  scroll(e){
+    var allheight = this.data.allheight
+    for (var i in allheight){
+      if (e.detail.scrollTop < allheight[i]){
+        return console.log(i)
+      }
+    }
   },
   getHeightArr: function (self) {
     var height = 0, height_arr = [], details = self.data.detail, s_height = self.data.s_height;

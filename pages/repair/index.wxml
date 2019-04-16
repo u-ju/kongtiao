@@ -5,7 +5,7 @@
     </view>
 
 </scroll-view>
-<scroll-view scroll-y scroll-with-animation class="nav_right"   scroll-into-view="{{toView}}"  style="height:{{s_height}}px;margin-top: 100rpx;padding-bottom:180rpx;"  >
+<scroll-view scroll-y scroll-with-animation class="nav_right"   scroll-into-view="{{toView}}" bindscroll='scroll' style="height:{{s_height}}px;margin-top: 100rpx;padding-bottom:180rpx;"  >
     
     <view class='page page0' id='view0' >
       <view class='banner'>
