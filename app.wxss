@@ -42,6 +42,9 @@ page{
 .size20{
   font-size: 20rpx;
 }
+.size22{
+  font-size: 22rpx;
+}
 .size24{
   font-size: 24rpx;
 }
@@ -70,6 +73,15 @@ page{
 .color4{
   color: #444;
 }
+.colorFE2C2C{
+  color: #FE2C2C
+}
+.color2EB354{
+  color: #2EB354
+}
 .bold{
   font-weight: bold
+}
+.textR{
+  text-align: right;
 }
