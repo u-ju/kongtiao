@@ -1,0 +1,53 @@
+<!--pages/my/index.wxml-->
+
+<view class='bg flex aligncenter'>
+  <!-- <image src='../../images/bg.png' class='bgpic'></image> -->
+  <view class='head flex aligncenter'>
+    <image src='../../images/index.jpg' class=''></image>
+    <view>15164684654</view>
+  </view>
+</view>
+<view class='item flex_btw'>
+  <view class='left'>我的订单</view>
+  <view class='right flex aligncenter color9'>
+  <view>查看全部订单</view>
+    <view class='iconfont icon-jiantouyou'></view>
+  </view>
+</view>
+<view class='state flex_btw flex_btw'>
+  <view class='center' wx:for="{{4}}">
+    <text class='iconfont icon-jiajubaoyang'></text>
+    <view>待确认</view>
+  </view>
+</view>
+<view class='item flex_btw'>
+  <view class='left'>收藏</view>
+  <view class='right flex aligncenter color9'>
+    <view class='iconfont icon-jiantouyou'></view>
+  </view>
+</view>
+<view class='item flex_btw'>
+  <view class='left'>卡卷</view>
+  <view class='right flex aligncenter color9'>
+    <view class='iconfont icon-jiantouyou'></view>
+  </view>
+</view>
+<view class='item flex_btw'>
+  <view class='left'>到家优选订单</view>
+  <view class='right flex aligncenter color9'>
+    <view>一元包邮</view>
+    <view class='iconfont icon-jiantouyou'></view>
+  </view>
+</view>
+<view class='item flex_btw marginb20'>
+  <view class='left'>聊天设置</view>
+  <view class='right flex aligncenter color9'>
+    <view class='iconfont icon-jiantouyou'></view>
+  </view>
+</view>
+<view class='item flex_btw'>
+  <view class='left'>帮助</view>
+  <view class='right flex aligncenter color9'>
+    <view class='iconfont icon-jiantouyou'></view>
+  </view>
+</view>

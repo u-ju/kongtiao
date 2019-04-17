@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/my/index",
     "pages/repair/index",
     "pages/address_edit/index",
     "pages/address/index",
@@ -43,7 +44,7 @@
       {
         "selectedIconPath": "images/my_s.png",
         "iconPath": "images/my_w.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/my/index",
         "text": "我的"
       }
     ]
