@@ -2,11 +2,11 @@
 <form  bindsubmit="formSubmit">
 <view class='flex align_center'>
   <view class='left'>收货人</view>
-  <input name='name' value='{{name}}'></input>
+  <input name='appointments' value='{{appointments}}' placeholder='请输入收货人'></input>
 </view>
 <view class='flex align_center'>
   <view class='left'>联系电话</view>
-  <input name='phone' value='{{phone}}'></input>
+  <input name='phone' maxlength='11' value='{{phone}}' placeholder='请输入联系电话'></input>
 </view>
 <view class='flex align_center'>
   <view class='left'>所在地区</view>
@@ -18,13 +18,14 @@
     custom-item="{{customItem}}"
   >
     <view class="picker">
-      {{region[0]}}，{{region[1]}}，{{region[2]}}
+    <!-- {{address}} -->
+      {{region[0]}}{{region[1]}}{{region[2]}}
     </view>
   </picker>
 </view>
 <view class='flex align_center'>
   <view class='left'>详细地址</view>
-  <input  name='address' value='{{address}}'></input>
+  <input  name='housenumber' value='{{housenumber}}' placeholder='请输入详细地址'></input>
 </view>
   <button class='btnsure' disabled='{{disabled}}'  form-type="submit">保存</button>
 </form>

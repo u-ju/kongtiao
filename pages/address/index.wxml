@@ -1,12 +1,12 @@
 <!--pages/address/index.wxml-->
-<view class='address'  wx:for="{{list}}" wx:key="index" >
+<view class='address'  wx:for="{{data}}" wx:key="index" >
   <view class='address_top'>
-    <view class='add_pname'>{{item.name}}  <text class='marginl50'>{{item.phone}}</text></view>
-    <view>{{item.area_name}} {{item.address}}</view>
+    <view class='add_pname'>{{item.appointments}}  <text class='marginl50'>{{item.phone}}</text></view>
+    <view>{{item.address}} {{item.housenumber}}</view>
   </view>
   <view class='flex_btw czuo'>
-    <view class='flex align_center' bindtap='choose' data-id="{{item.address_id}}" data-default="{{item.default}}">
-      <image src='../../images/choosed.png' class='choose' wx:if="{{item.default==1}}" mode='aspectFit'></image>
+    <view class='flex align_center' bindtap='choose' data-id="{{item.id}}" data-flag="{{item.flag}}">
+      <image src='../../images/choosed.png' class='choose' wx:if="{{item.flag==1}}" mode='aspectFit'></image>
       <image src='../../images/choose.png'  class='choose' wx:else mode='aspectFit'></image>
       <text>设为默认地址</text>
     </view>
@@ -14,7 +14,7 @@
         <image src='../../images/edit.png' mode='aspectFit'></image>
         <text>编辑</text>
     </view>
-    <view class='flex align_center'  bindtap='delete' data-id="{{item.address_id}}" >
+    <view class='flex align_center'  bindtap='delete' data-id="{{item.id}}" >
       <image src='../../images/delete.png' mode='aspectFit'></image>
       <text>删除</text>
     </view>

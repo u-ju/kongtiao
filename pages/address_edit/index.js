@@ -10,12 +10,10 @@ Page({
   data: {
     // 地址
     current: 0,
-    areaSelectedStr: '',
-    area_id_val: 0,
     disabled: false,
     item: '',
-    url: '',
-    region: ['四川省', '成都市', '武侯区'],
+    url: 'addAddress',
+    region: ['请选择', '', ''],
   },
 
   /**
@@ -26,23 +24,28 @@ Page({
       var item = JSON.parse(options.item)
       this.setData({
         item: item,
-        name: item.name,
+        id:item.id,
+        appointments: item.appointments,
         phone: item.phone,
-        area: item.area,
-        address: item.address,
-        url: '',
+        region: item.address.split(' '),
+        housenumber: item.housenumber,
+        url: 'updateAddress',
       })
       
     }
   },
   formSubmit(e){
-    console.log(e)
+    
     var data = e.detail.value,that = this;
+    data.address = that.data.region.join(' ')
+    if(this.data.item){
+      data.id = that.data.id
+    }else{
+      data.wxid = wx.getStorageSync('wxid')
+    }
+    console.log(data)
     util.postJSON({apiUrl: apiurl[that.data.url] ,data:data},
      function (res) {
-      var result = res.data.result;
-       wx.hideLoading()
-       util.alert(res.data.message)
        util.navigateBack()
     },function (){
        that.setData({

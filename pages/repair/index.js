@@ -50,8 +50,13 @@ Page({
         type:1
       }
     }, function (res3) {
-      console.log(res3)
-
+      console.log(res3.data)
+      var data = res3.data
+      that.setData({
+        air: data.air,
+        wxEvaluates: data.wxEvaluates,
+        wxairtype: data.wxairtype,
+      })
     })
     wx.createSelectorQuery().selectAll('.page0').boundingClientRect(function (rect) {
       console.log(rect)

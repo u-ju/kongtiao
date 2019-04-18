@@ -33,22 +33,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    util.loading()
   },
   choose(e) {
-    var list = this.data.list
-    var that = this;
-    console.log()
     
+    var that = this;
+    util.postJSON({
+      apiUrl: apiurl.updateUserFalg,
+      data: {
+        id: e.currentTarget.dataset.id,
+        wxid: wx.getStorageSync('wxid')
+      }
+    }, function (res) {
+      console.log(res.data)
+      that.init()
+    })
   },
   init() {
     var that = this;
-    
+    util.postJSON({
+      apiUrl: apiurl.findAdress,
+      data: {
+        wxid: wx.getStorageSync('wxid')
+      }
+    }, function (res) {
+      console.log(res.data)
+      var data = res.data
+      util.hideLoading()
+      that.setData({
+        data: data
+      })
+    })
   },
   detail(e){
     console.log(e)
     wx.navigateTo({
-      // url: '../address_edit/index?item=' +,
+      url: '../address_edit/index?item=' + JSON.stringify(e.currentTarget.dataset.item),
     })
   },
   delete(e){
@@ -64,8 +84,16 @@ Page({
       success: function (res) {
         if (res.confirm) {
           console.log('用户点击确定')
-          data["address_id[0]"] = e.currentTarget.dataset.id
-          
+          data.id= e.currentTarget.dataset.id
+          util.postJSON({
+            apiUrl: apiurl.delAddress,
+            data: {
+              id: e.currentTarget.dataset.id
+            }
+          }, function (res) {
+            console.log(res.data)
+            that.init()
+          })
         } else {
           console.log('用户点击取消')
         }
@@ -75,5 +103,6 @@ Page({
     
   },
   onShow(){
+    this.init()
   }
 })

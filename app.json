@@ -1,17 +1,20 @@
 {
   "pages":[
+    "pages/address/index",
+    "pages/login/index",
+    "pages/index/index",
     "pages/repair/index",
     "pages/address_edit/index",
-    "pages/address/index",
+    
     
     
     
     "pages/repairPayment/index",
     
-    "pages/login/index",
+   
     
     
-    "pages/index/index",
+    
     "pages/logs/logs"
     
     

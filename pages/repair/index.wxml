@@ -9,12 +9,12 @@
     
     <view class='page page0' id='view0' >
       <view class='banner'>
-        <image class="banner" src='../../images/index.jpg'></image>
+        <image class="banner" src='{{air.bgimage}}'></image>
       </view>
       <view class='page '>
         <view class='con con1'>
-          <view class='size36 center'>空调维修</view>
-          <view class='center colorF45F37 size32 flex flex_cen aligncenter'> <text>￥30 </text><text class='colorF45F37 yufj size26'>预付金</text></view>
+          <view class='size36 center'>{{air.airname}}</view>
+          <view class='center colorF45F37 size32 flex flex_cen aligncenter'> <text>￥{{air.rmoney}} </text><text class='colorF45F37 yufj size26'>预付金</text></view>
           <view class='color9 size24' bindtap='open2'>
             此费用为预付金，查看取消、收款退款规则
           </view>
@@ -27,8 +27,8 @@
           </view>
           <view class='center'>
             <view class='yuan'> <view class='hyuan'><text class='iconfont size24'>90</text></view></view>
-            <view class='bold'>时效保障</view>
-            <view class='color9 size20'>3分钟响应</view>
+            <view class='bold'>质保返修</view>
+            <view class='color9 size20'>90天内免费上门返修</view>
           </view>
         </view>
       </view>
@@ -76,14 +76,15 @@
     </view>
     </view>
     <view class='page page2' id='view2'>
+      <view class='size30 center marginb20'>服务流程</view>
       <view class='con'>
-        <image  src='../../images/index.jpg'></image>
+        <image  src='{{air.image}}'></image>
       </view>
     </view>
     <view class='page page3' id='view3'>
       <view class='con'>
         <view class='size30 center marginb20'>评价</view>
-        <view wx:for="{{4}}">
+        <view wx:for="{{wxEvaluates}}" wx:key="index">
           <view class='flex_btw aligncenter'>
             <view class='head flex aligncenter'>
               <image  src='../../images/index.jpg' class='header'></image>

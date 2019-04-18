@@ -56,6 +56,11 @@ Page({
                     }, function (res3) {
                       console.log(res3)
                       wx.setStorageSync('token', res3.data.token)
+                      wx.setStorageSync('wxid', res3.data.wxid)
+                      console.log(wx.getStorageSync('wxid'))
+                      wx.reLaunch({
+                        url: '../index/index',
+                      })
                       util.hideLoading()
                     })
                   }
