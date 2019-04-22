@@ -1,0 +1,3 @@
+<!--pages/message/index.wxml-->
+<image src='../../images/unopen.png' class='unopen' mode='aspectFit'></image>
+<view class='center'>暂无信息</view>

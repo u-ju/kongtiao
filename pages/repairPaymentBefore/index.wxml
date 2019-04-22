@@ -1,0 +1,81 @@
+<!--pages/repairPaymentBefore/index.wxml-->
+<view class='cancel'>
+  <view class='bold size36 '>订单等待支付 </view>
+  <view>请在{{clock}}内完成支付，超时将取消订单</view>
+</view>
+<view class='fkItem  shitem' >
+  <view class='flex_btw guarantee'>
+    <view class='flex'>
+      <image src='../../images/index.jpg' class='logo'></image>
+      <text>啄木鸟到家维修</text>
+    </view>
+    <text class='iconfont icon-jiantouyou color9'></text>
+  </view>
+  <view class='fkItem_goods flex'  wx:key="index">
+    <image src='../../images/index.jpg' class='goospic' mode='aspectFit'></image>
+    <view class='fkItem_goods_ms '>
+      <view class='color4 size28 flex_btw'><text class='one-hidden width'>空调维修</text> <text class='color898989'><text class='iconfont icon-cuohao'></text>1</text></view>
+      <view class='color4 size28 one-hidden'>上门服务</view>
+      <view class='colorF45F37 size28'>￥30</view>
+      
+    </view>
+  </view>
+  <view class='flex_btw guarantee'>
+    <view class='flex'>
+      <text class='bold'>保障</text>
+      <view>
+        <text class='iconfont icon-qian'></text>
+        <text>明码标价</text>
+      </view>
+    </view>
+    <text class='iconfont icon-jiantouyou color9'></text>
+  </view>
+  <view class='flex_btw guarantee'>
+    <view class='flex'>
+      <text class='bold'>收费标准</text>
+    </view>
+    <view class='color9'>
+      <text>点击查看详情</text>
+      <text class='iconfont icon-jiantouyou '></text>
+    </view>
+  </view>
+</view>
+<view class='money'>
+  <view class='flex_btw guarantee'>
+    <view class='flex'>
+      <text class='bold'>订单总价</text>
+    </view>
+    <view class='bold'>
+      ￥30
+    </view>
+  </view>
+  <view class='textR bold guarantee'>
+    实际支付金额 <text class='colorFE2C2C'>￥0</text>
+  </view>
+</view>
+<view class='mes'>
+  <view class='flex guarantee'>
+    <view class='left1 color9'>服务地址</view>
+    <view class='right1'>服务地址服务地址服务地址服务地址服务地址服务地址服务地址服务地址服务地址服务地址服务地址</view>
+  </view>
+  <view class='flex guarantee'>
+    <view class='left1 color9'>联系人</view>
+    <view class='right1'>名字 15555515155</view>
+  </view>
+  <view class='flex guarantee'>
+    <view class='left1 color9'>编号</view>
+    <view class='right1'>15fdddddd</view>
+  </view>
+  <view class='flex guarantee'>
+    <view class='left1 color9'>下单时间</view>
+    <view class='right1'>2019</view>
+  </view>
+</view>
+<view class='fixbtm'>
+  <view class='bgfdf1c4'>请仔细查看「服务价目表 」再进行购买;在线支付的订单是处理退款、赔偿等问题的唯一凭据， 私下交易无法享受权益保障! </view>
+  <view class='beforebtn'>
+    
+    <view class='borbtn pay'>去支付</view>
+    <view class='borbtn'>取消订单</view>
+  </view>
+</view>

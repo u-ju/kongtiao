@@ -213,8 +213,9 @@
   margin: 6rpx 0 10rpx 0
 }
 .plcon image{
-  width: 200rpx;
-  height: 200rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 20rpx 20rpx 0;
 }
 ::-webkit-scrollbar {
 

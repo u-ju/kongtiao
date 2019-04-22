@@ -1,15 +1,24 @@
 {
   "pages":[
+    "pages/message/index",
+    "pages/comment/index",
+    
+    "pages/repairPaymentBefore/index",
+    "pages/repairPayment/index",
+    "pages/order/index",
+    "pages/repair/index",
     "pages/address/index",
     "pages/login/index",
     "pages/index/index",
-    "pages/repair/index",
+    
+    "pages/my/index",
+    
     "pages/address_edit/index",
     
     
     
     
-    "pages/repairPayment/index",
+    
     
    
     
@@ -46,7 +55,7 @@
       {
         "selectedIconPath": "images/my_s.png",
         "iconPath": "images/my_w.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/my/index",
         "text": "我的"
       }
     ]

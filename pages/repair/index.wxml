@@ -5,7 +5,7 @@
     </view>
 
 </scroll-view>
-<scroll-view scroll-y scroll-with-animation class="nav_right"   scroll-into-view="{{toView}}" bindscroll='scroll' style="height:{{s_height}}px;margin-top: 100rpx;padding-bottom:180rpx;"  >
+<scroll-view scroll-y scroll-with-animation class="nav_right"   scroll-into-view="{{toView}}" bindscroll='scroll' style="height:{{s_height}}px;margin-top: 100rpx;padding-bottom:90rpx;"  >
     
     <view class='page page0' id='view0' >
       <view class='banner'>
@@ -37,36 +37,14 @@
     <view class='con'>
     <view class='size30 center marginb20'>空调维修</view>
      <view class='history-table-wrap'>
-        <view class="table">
+        <view class="table" wx:for="{{wxairtype}}" wx:key="index">
           <view class="tr">
-              <view class="th th1">日期</view>
+              <view class="th th1">{{item.moldname}}</view>
               <view class="th th2"></view>
           </view>
           <view class="tr" >
-              <view class="td td1">我是内容我是内容我是内容我是内容我是内容我是内容</view>
-              <view class="td td2">11:30</view>
-          </view>
-        </view>
-        <view class="table">
-          <view class="tr">
-              <view class="th th1">日期</view>
-              <view class="th th2"></view>
-          </view>
-          <view class="tr" >
-              <view class="td td1">2018/02/12</view>
-              <view class="td td2">11:30</view>
-          </view>
-          <view class="tr" >
-              <view class="td td1">2018/02/12</view>
-              <view class="td td2">11:30</view>
-          </view>
-          <view class="tr" >
-              <view class="td td1">2018/02/12</view>
-              <view class="td td2">11:30</view>
-          </view>
-          <view class="tr" >
-              <view class="td td1">2018/02/12</view>
-              <view class="td td2">11:30</view>
+              <view class="td td1">{{item.parametername}}</view>
+              <view class="td td2">{{item.price}}</view>
           </view>
         </view>
       </view>
@@ -87,19 +65,21 @@
         <view wx:for="{{wxEvaluates}}" wx:key="index">
           <view class='flex_btw aligncenter'>
             <view class='head flex aligncenter'>
-              <image  src='../../images/index.jpg' class='header'></image>
+              <image  src='{{item.avatarUrl}}' class='header'></image>
               <view>
-                <view>hhhh</view>
+                <view>nickName</view>
                 <view>
-                  <text wx:for="{{5}}" class='iconfont icon-xingxing'></text>
+                  <text wx:for="{{item.score}}" class='iconfont icon-xingxing'></text>
                 </view>
               </view>
             </view>
             <view class='color9'>20190302</view>
           </view>
           <view class='plcon'>
-            <view class='plcont'>哒哒哒哒哒哒多多多多多多多多多多多多多多多多多多多多</view>
-            <image  src='../../images/index.jpg'></image>
+            <view class='plcont'>{{item.content}}</view>
+            <block wx:if="{{item.image}}">
+              <image  wx:for="{{item.image}}" wx:key="index"  src='{{item}}'></image>
+            </block>
           </view>
         </view>
         <view class='allpl'>查看全部评价</view>
@@ -111,7 +91,7 @@
     <text  class='iconfont icon-xiaoxi '></text>
     <view>联系商家</view>
   </view>
-  <view class='button'>立即预约</view>
+  <view bindtap='call' data-phone='{{air.telephone}}' class='button'>立即预约</view>
 </view>
 <wux-popup position="bottom" visible="{{ visible2 }}" bind:close="onClose2" closable  >
     <view class='content'>

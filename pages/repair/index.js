@@ -52,9 +52,13 @@ Page({
     }, function (res3) {
       console.log(res3.data)
       var data = res3.data
+      var wxEvaluates = data.wxEvaluates
+      for (var i in wxEvaluates){
+        wxEvaluates[i]["image"] = wxEvaluates[i]["image"].split(',')
+      }
       that.setData({
         air: data.air,
-        wxEvaluates: data.wxEvaluates,
+        wxEvaluates: wxEvaluates,
         wxairtype: data.wxairtype,
       })
     })
@@ -88,11 +92,12 @@ Page({
   },
   scroll(e){
     var allheight = this.data.allheight
-    for (var i in allheight){
-      if (e.detail.scrollTop < allheight[i]){
-        return console.log(i)
-      }
-    }
+    console.log(e.detail.scrollTop )
+    // for (var i in allheight){
+    //   if (e.detail.scrollTop < allheight[i]){
+    //     return console.log(i)
+    //   }
+    // }
   },
   getHeightArr: function (self) {
     var height = 0, height_arr = [], details = self.data.detail, s_height = self.data.s_height;
@@ -124,4 +129,17 @@ Page({
       [key]: false,
     })
   },
+  call(e){
+    console.log(e.currentTarget.dataset.phone)
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phone, //此号码并非真实电话号码，仅用于测试
+      success: function () {
+        console.log("拨打电话成功！")
+      },
+      fail: function () {
+        console.log("拨打电话失败！")
+      }
+    })
+
+  }
 })

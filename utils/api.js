@@ -1,7 +1,7 @@
-const basePath = 'https://501f875c.ngrok.io/api';
+const basePath = 'http://cd159ddf.ngrok.io/api';
 const apiList = {
   auth: basePath +'/wx/auth',
-  airConditionerType: basePath + '/wxairConditionerType',
+  airConditionerType: basePath + '/wx/v1/airConditionerType',
   findAdress: basePath + '/wx/v1/findAdress',
   addAddress: basePath + '/wx/v1/addAddress',
   updateAddress: basePath + '/wx/v1/updateAddress',

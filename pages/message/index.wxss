@@ -1,0 +1,10 @@
+/* pages/message/index.wxss */
+page{
+  background-color: #f8f8f8;
+  text-align: center
+}
+.unopen{
+  width: 400rpx;
+  height: 400rpx;
+  margin:100rpx 0 80rpx 0
+}

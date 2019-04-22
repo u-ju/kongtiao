@@ -94,7 +94,7 @@ margin-left:60rpx;
 
 navigator{
   display: inline-block;
-  color: #4AD6A3;
+  color: #F45F37;
   font-size: 28rpx;
 }
 .goospic{
@@ -123,8 +123,8 @@ checkbox .wx-checkbox-input {
 }
 /*checkbox选中后样式  */
 checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-  background: #4AD6A3;
-  border-color: #4AD6A3;
+  background: #F45F37;
+  border-color: #F45F37;
 }
 /*checkbox选中后图标样式  */
 checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
@@ -137,7 +137,7 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   background: transparent;
   transform: translate(-50%, -50%) scale(1);
   -webkit-transform: translate(-50%, -50%) scale(1);
-  border-color: #4AD6A3;
+  border-color: #F45F37;
 }
 .checkbox{
   display: flex;
@@ -157,9 +157,10 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 .guarantee .bold{
   margin-right: 80rpx;
 }
-.kdxx input{
+.kdxx textarea{
   width: 560rpx;
   text-align: right;
+  height: 100rpx;
 }
 .tips{
   padding: 20rpx 32rpx 50rpx 32rpx;

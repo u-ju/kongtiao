@@ -39,7 +39,7 @@
   <view class='flex_btw'><text class='bold' >商家优惠</text><text class='colorFE3434 size30 bold'>-20</text></view>
   <view class='flex_btw aligncenter'>
     <text class='bold ' >留言</text>
-    <input placeholder='选填' placeholder-class='color9'></input>
+    <textarea placeholder='' placeholder-class='color9'></textarea>
   </view>
 </view>
 <view class='flex align_center margint40'>

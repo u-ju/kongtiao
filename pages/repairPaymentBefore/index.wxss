@@ -1,0 +1,68 @@
+/* pages/repairPaymentBefore/index.wxss */
+@import '../repairPayment/index';
+page{
+  padding-bottom: 200rpx;
+}
+.cancel{
+   background: linear-gradient(#F45F37, #F45F37);
+   color: white;
+   padding:50rpx 32rpx; 
+}
+.fkItem_goods {
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.logo{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.guarantee {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.fkItem{
+  padding-bottom: 0;
+}
+.fkItem>view:last-of-type,.money>view:last-of-type,.mes>view:last-of-type{
+  border: none;
+}
+.money,.mes{
+  padding: 0 32rpx;
+  background-color: white;
+  margin-bottom: 20rpx;
+}
+.mes .left1{
+  width: 160rpx;
+}
+.mes .right1{
+  width: 500rpx;
+}
+.borbtn{
+  width: 150rpx;
+  height:  60rpx;
+  border: 1px solid #444;
+  border-radius: 6rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-right: 20rpx;
+}
+.beforebtn{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.pay{
+  border: 1px solid #F45F37;
+  color: #F45F37;
+}
+.beforebtn{
+  padding: 20rpx 0;
+  background-color: white;
+}
+.guarantee .bold {
+  margin: 0;
+}
+.icon-qian{
+  margin-left: 80rpx;
+}
