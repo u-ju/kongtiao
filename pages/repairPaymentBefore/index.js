@@ -1,4 +1,8 @@
 // pages/repairPaymentBefore/index.js
+const app = getApp()
+var util = require('../../utils/util.js');
+var apiurl = require('../../utils/api.js');
+
 Page({
 
   /**
@@ -9,7 +13,7 @@ Page({
     "productPrice": "",
     "payDetail": [],
     "wxPayMoneyDesc": "",
-    "expireTime": "2019-4-22 22:15",
+    "expireTime": "2019-4-23 22:15",
     clock: ''
 
   
@@ -36,11 +40,7 @@ Page({
       // timeout则跳出递归
       return;
     }
-    // setTimeout(function () {
-    //   // 放在最后--
-    //   duringMs -= 10;
-    //   that.count_down();
-    // }, 1000)
+    // set 
   },
   /* 格式化倒计时 */
   date_format: function (micro_second) {
@@ -54,7 +54,8 @@ Page({
     // 秒位
     var sec = that.fill_zero_prefix(second % 60);// equal to => var sec = second % 60;
     console.log(micro_second)
-    return hr + ":" + min + ":" + sec + " ";
+    // 
+    return hr + "小时" +min + "分" + sec + "秒";
   },
 
   /* 分秒位数补0 */
@@ -66,7 +67,19 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    that.count_down();
+    // that.count_down();
+    util.postJSON({
+      apiUrl: apiurl.getOrderDetails ,
+      data: {
+        orderId: options.id
+      }
+    }, function (res3) {
+      console.log(res3.data)
+      that.setData({
+        data: res3.data
+      })
+      console.log(new Date(res3.data.ctime))
+    })
   },
 
   /**

@@ -1,11 +1,12 @@
 {
   "pages":[
-    "pages/message/index",
-    "pages/comment/index",
-    
-    "pages/repairPaymentBefore/index",
-    "pages/repairPayment/index",
     "pages/order/index",
+    "pages/repairPaymentBefore/index",
+    "pages/comment/index",
+    "pages/message/index",
+    
+    "pages/repairPayment/index",
+    
     "pages/repair/index",
     "pages/address/index",
     "pages/login/index",

@@ -1,32 +1,36 @@
 <!--pages/order/index.wxml-->
-<wux-tabs wux-class="bordered" controlled current="{{ key }}" bindchange="onTabsChange">
+<wux-tabs wux-class="bordered" controlled current="{{ status }}" bindchange="onTabsChange">
     <block wx:for="{{ tabs }}" wx:key="index">
         <wux-tab key="{{ item.key }}" title="{{ item.name }}"></wux-tab>
     </block>
 </wux-tabs>
 <view class='list' >
-  <view class='fkItem' wx:for="{{list}}"  wx:key="index" wx:for-index="listindex" bindtap='detail' data-id='{{item.order_id}}'>
+  <view class='fkItem' wx:for="{{list}}"  wx:key="index" wx:for-index="listindex">
     
     <view class='flex_btw'>
-      <text class='color4 size28'>订单号：{{item.order_no}}</text>
-      <text class='color2EB354 size22'>{{item.order_status_name}} </text>
-    </view>
-    <view class='list1' >
-      <view class='fkItem_goods  flex' wx:for="{{item.order_goods}}" wx:for-item="order_goods" wx:key="index">
-        <image src='{{order_goods.thumb}}' class='goospic' mode='aspectFill'></image>
-        <view class='fkItem_goods_ms fhItem_goods_ms'>
-          <view class='color4 size28 hidden2'>{{order_goods.spu_name}}</view>
-          <view class='color9 size24'>{{order_goods.sku_name}}</view>
-        </view>
-        <view class='textR'>
-          <view class='colorFE2C2C size24'>￥{{order_goods.real_price}}</view>
-          <view class='color9 size24'>X{{order_goods.buy_count}}</view>
-        </view>
+      <view class='flex_btw'>
+        <image src='https://wyhb-res-pr.zgwyhb.com/uploads/image/2019/03/05/051beb781dfee0576a00fb7bf77cdd3d.jpg' class='logo'></image>
+        <text class='color4 size28'>空调宝维修</text>
       </view>
-      <view class='flex_reverse size28'>
-        <block  wx:for="{{item.button_arr}}" wx:for-item="button_arr" wx:key="index">
-            <view class='color989898 btnck'  catchtap='{{button_arr.key}}' data-listindex='{{listindex}}' data-id='{{item.order_id}}' >{{button_arr.name}}</view>
-        </block>
+      <text class='color2EB354 size22'>{{tabs[item.status-0+1]['name']}} </text>
+    </view>
+    <view class='list1' bindtap='detail' data-id='{{item.orderId}}' >
+      <view class='fkItem_goods  flex align_center' >
+        <image src='{{item.orderimg}}' class='goospic' mode='aspectFill'></image>
+        <!-- <view class='fkItem_goods_ms fhItem_goods_ms'> -->
+          <view class='color4 size28 hidden2'>{{item.airname}}</view>
+        <!-- </view> -->
+      </view>
+      
+      <view class='bold textR'>
+        总金额 <text class='colorF45F37'>￥{{item.total}}</text>
+      </view>
+      <view class='flex_reverse size28' >
+        <view class='color989898 btnck' wx:if="{{item.status==1}}"  catchtap=''  >取消订单</view>
+        <view class='color989898 btnck' wx:if="{{item.status==0}}"  catchtap=''  >待支付</view>
+        <view class='color989898 btnck' wx:if="{{item.status==1}}"  catchtap=''  >待确认</view>
+        <view class='color989898 btnck' wx:if="{{item.status==2}}"  catchtap=''  >待服务</view>
+        <view class='color989898 btnck' wx:if="{{item.status==3}}"  catchtap=''  >待评价</view>
       </view>
     </view>
     

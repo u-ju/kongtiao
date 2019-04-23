@@ -10,117 +10,54 @@ Page({
   data: {
     tabs :[
       {
-        "key": "0",
+        "key": "5",
         "name": "全部"
       },
-      
+      {
+        "key": "0",
+        "name": "待支付"
+      },
       {
         "key": "1",
         "name": "待确认"
       },
       {
         "key": "2",
-        "name": "代服务"
+        "name": "待服务"
       },
       {
         "key": "3",
-        "name": "待支付"
+        "name": "已完成"
       },
       {
         "key": "4",
-        "name": "待评价"
+        "name": "已评价"
       }
     ],
     status:5,
-    list:[
-      {
-        "order_no": "2886746397190412145706000001",
-        "source": "sell",
-        "order_status": "0",
-        "order_amount": "5009.00",
-        "comment_status": "0",
-        "order_id": "20",
-        "order_status_name": "待发货",
-        "payment_name": "环保金分期支付",
-        "button_arr": [],
-        "order_goods": [
-          {
-            "order_id": "20",
-            "spu_id": "2",
-            "spu_name": "智能空调",
-            "sku_id": "6",
-            "sku_name": "黑色-64g",
-            "thumb": "https://wyhb-res-pr.zgwyhb.com/uploads/image/2019/03/05/051beb781dfee0576a00fb7bf77cdd3d.jpg",
-            "buy_count": "1",
-            "real_price": "3999.00"
-          }
-        ]
-      },
-    {
-      "order_no": "2886746397190403161852000001",
-      "source": "sell",
-      "order_status": "0",
-      "order_amount": "3990.00",
-      "comment_status": "0",
-      "order_id": "15",
-      "order_status_name": "待发货",
-      "payment_name": "环保金分期支付",
-      "button_arr": [],
-      "order_goods": [
-        {
-          "order_id": "15",
-          "spu_id": "1",
-          "spu_name": "金鹰1号",
-          "sku_id": "1",
-          "sku_name": "红色-510*160*385mm",
-          "thumb": "https://wyhb-res-pr.zgwyhb.com/uploads/image/2019/03/21/b0a8bedee5527ed4fd3f146852684094.png",
-          "buy_count": "1",
-          "real_price": "3990.00"
-        }
-      ]
-    },
-    {
-      "order_no": "2886746397190403153345000001",
-      "source": "sell",
-      "order_status": "1",
-      "order_amount": "5298.00",
-      "comment_status": "0",
-      "order_id": "14",
-      "order_status_name": "待收货",
-      "payment_name": "环保金分期支付",
-      "button_arr": [
-        {
-          "key": "logistics",
-          "name": "查看物流"
-        },
-        {
-          "key": "receive",
-          "name": "确认收货"
-        }
-      ],
-      "order_goods": [
-        {
-          "order_id": "14",
-          "spu_id": "7",
-          "spu_name": "爱卿AQ-A6分质供水带超滤（金色）A6分质供水带超滤（金色）",
-          "sku_id": "7",
-          "sku_name": "金色-510*160*385mm",
-          "thumb": "https://wyhb-res-pr.zgwyhb.com/uploads/image/2019/03/21/7a8accfe8702577b31ac19fbb1ea9ed1.png",
-          "buy_count": "1",
-          "real_price": "5199.00"
-        }
-      ]
-    },
-    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.init()
   },
-
+  init(status=''){
+    var that = this;
+    util.postJSON({
+      apiUrl: apiurl.getOrder ,
+      data: {
+        wxid: wx.getStorageSync('wxid'),
+        status: status
+      }
+    }, function (res3) {
+      console.log(res3.data)
+      that.setData({
+        list: res3.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -144,8 +81,9 @@ Page({
       index,
     })
     this.setData({
-      status: this.data.tabs[index].id
+      status: this.data.tabs[index].key
     })
+    this.init(this.data.tabs[index].key)
   },
   onSwiperChange(e) {
     util.loading()
@@ -159,7 +97,14 @@ Page({
       })
     }
     this.setData({
-      status: this.data.tabs[index].id
+      status: this.data.tabs[index].key
+    })
+    that
+  },
+  detail(e){
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../repairPaymentBefore/index?id=' + e.currentTarget.dataset.id,
     })
   },
   /**
